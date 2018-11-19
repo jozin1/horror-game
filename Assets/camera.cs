@@ -24,7 +24,7 @@ public class camera : MonoBehaviour {
     public float pitch=0.0f;
     public bool noszenie;
 
-    public float moving =0f;      //ruch kamery w ten sposób, by wyglądała jak przy prawdziwym chodzeniu
+    //public float moving =0f;      //ruch kamery w ten sposób, by wyglądała jak przy prawdziwym chodzeniu
     public float limit = 1;
     float cos = 0.04f;
     float cos2 = 0.009f;
@@ -37,10 +37,10 @@ public class camera : MonoBehaviour {
 
     void Update()
     {
-        Sounds();
+        //Sounds();
         CameraRotate();
-        CameraMove();
-        Holding();
+        //CameraMove();
+        //Holding();
     }
 
     void CameraRotate()
@@ -61,8 +61,8 @@ public class camera : MonoBehaviour {
     void CameraMove()
     {
        
-        pozycja = this.transform.position.y - ja.transform.position.y;
-        if (mv2.bieganie)
+        //pozycja = this.transform.position.y - ja.transform.position.y;
+        /*if (mv2.bieganie)
         {
             test = true;
             if (Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.UpArrow))
@@ -89,13 +89,13 @@ public class camera : MonoBehaviour {
         if (!Input.GetKey(KeyCode.LeftShift) && !Input.GetKey(KeyCode.LeftControl) && pozycja < 1.7f)
         {
             cam.transform.position = new Vector3(cam.transform.position.x, cam.transform.position.y + 0.04f, cam.transform.position.z);
-        }
+        }*/
 
     }
 
     void Sounds()
     {
-        if(mv2.chodzenie && mv2.grounded)
+        /*if(mv2.chodzenie && mv2.grounded)
         {
             if(Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.S))
             {
@@ -106,7 +106,7 @@ public class camera : MonoBehaviour {
                     timer = 0;
                 }
             }
-        }
+        }*/
     }
     void Holding()
     {

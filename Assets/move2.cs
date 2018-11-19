@@ -1,11 +1,12 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
-using UnityEngine;//
+using UnityEngine;
 
 public class move2 : MonoBehaviour {
     [SerializeField] GameObject ja;
     CapsuleCollider caps;
-    public float jump=300f;
+    BoxCollider box;
+    public float jump=30f;
     public GameObject kamera;
     public float speed=0.1f;
     Rigidbody rgt;
@@ -21,6 +22,7 @@ public class move2 : MonoBehaviour {
     void Start () {
         rgt = GetComponent<Rigidbody>();
         caps = GetComponent<CapsuleCollider>();
+        box = GetComponent<BoxCollider>();
 
     }
 
@@ -30,10 +32,12 @@ public class move2 : MonoBehaviour {
         Skok();
         Chodzenie();
     }
+
     void FixedUpdate()
     {
         Run();
     }
+
     public void Chodzenie()                          
     {
         if (!Input.GetKey(KeyCode.A) && !Input.GetKey(KeyCode.D))
